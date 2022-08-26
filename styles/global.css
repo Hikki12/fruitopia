@@ -1,0 +1,280 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@300;500;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    transition: .5s;
+}
+
+html, body {
+    background: white;
+    font-family: 'Dosis', sans-serif;
+}
+
+/* Header */
+
+header {
+    padding: 1rem 1rem;
+    display: flex;
+    position: sticky;
+    top: 0;
+    background: white;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+header .nav {
+    width: 100%;
+    display: flex;
+    align-items:center;
+    justify-content: space-between;
+}
+
+header a .logo{
+    width: 120px;
+}
+
+header .collapse {
+    font-size: 1.3rem;
+    flex:1;
+    text-align: right;
+    position: absolute;
+    height: 100vh;
+    width: 150px;
+    top: 0;
+    left: -300px;
+    transition: .5s;
+}
+
+header .collapse.active {
+    top: 0;
+    left: 0;
+    height: 100vh;
+    padding: 3rem;
+    text-align: start;
+    display: flex;
+    position: absolute;
+    background: #f14a60f2;
+    color: white;
+    flex-direction: column;
+    gap: .5rem;
+}
+
+header .collapse li {
+    display: inline;
+    list-style: none;
+    margin: 0 25px;
+    cursor: pointer;
+}
+
+header .collapse li a {
+    text-decoration: none;
+    color: white;
+    position: relative;
+}
+
+header .nav-icons {
+    display: flex;
+    gap: 10px;
+}
+
+header .nav-icons img {
+    height: 20px;
+    cursor: pointer;
+}
+
+/* Home section */
+.home {
+    overflow-x: hidden;
+    padding: 1rem 1rem;
+    max-width: 1000px;
+    margin: 0 auto;
+    min-height: 90vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.home .feature-text {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.home .feature-text p {
+    color: gray;
+}
+
+.home .feature-text h3 {
+    display: flex;
+    font-size: 4rem;
+    color: #f14a60;
+    margin: 1rem 0;
+}
+
+.home .feature-text h3 b {
+    color: black;
+}
+
+.home .feature-text h5 {
+    display: flex;
+    gap: .5rem;
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+
+.home .feature-text h5 b {
+    color: #f14a60;
+}
+
+.feature-search {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid gray;
+    width: 100%;
+    max-width: 400px;
+    margin-bottom: 1rem;
+}
+
+.feature-search img {
+    width: 25px;
+    height: 25px;
+}
+
+.feature-search input[type="search"] {
+    border: none;
+    box-shadow: none;
+    padding: .5rem 1rem;
+    width: 100%;
+    outline: none;
+    font-size: 1.1rem;
+}
+
+.home .buttons-container {
+    display: flex;
+    gap: 1rem;
+    margin: 2rem 0;
+}
+
+.button {
+    box-shadow: none;
+    border-width: 1px;
+    border-radius: 1rem;
+    border-color: gray;
+    padding: .5rem 1.5rem;
+    background: white;
+    cursor: pointer;
+    color: #f14a60;
+    border-color: #f14a60;
+    border-style: solid;
+}
+
+.button-primary {
+    color: white;
+    background-color: #f14a60;
+}
+
+.button-primary:hover,
+.button-primary:focus{
+    letter-spacing: 1px;
+    background-color: white;
+    color: #f14a60;
+}
+
+.button-secondary:hover {
+    letter-spacing: 1px;
+    background-color: #f14a60;
+    color: white;
+}
+
+
+.home .feature-image {
+    /* width: 50%; */
+    height: 40vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.home .feature-image img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    margin: 0 auto;
+}
+
+.home .social-container {
+    margin: 20px 0;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.home .social-container img {
+    height: 20px;
+    cursor: pointer;
+}
+
+.home .social-container .hr {
+    width: 100px;
+    height: 2px;
+    background: gray;
+}
+
+@media (min-width: 768px) {
+
+    header {
+        padding: 1.5rem 1rem;
+    }
+    header .collapse, header .collapse.active {
+        font-size: 1rem;
+        transform: scale(1);
+        position: relative;
+        left: 0;
+        top: 0;
+        height: 100%;
+        align-items: center;
+        justify-content: end;
+        display: flex;
+        flex-direction: row;
+        background: white;
+        color: black;
+        padding: 0;
+        gap: 0;
+    }
+    header .collapse li a {
+        color: black;
+    }
+
+    header .collapse li a::after {
+        content: '';
+        width: 100%;
+        height: 7px;
+        background: #f14a60f2;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        top: -60px;
+        transition: .5s;
+    }
+    
+    header .collapse li a:hover::after {
+        width: 100%;
+        top: -38px;
+    }
+
+    .home {
+        padding: 2.5rem 1rem;
+        flex-direction: row;
+        justify-content:center;
+    }
+
+    .home .feature-text {
+        width: 50%;
+    }
+
+    .home .feature-image {
+        width: 50%;
+        height: 70vh;
+    }
+}
